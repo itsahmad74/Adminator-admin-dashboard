@@ -378,7 +378,7 @@
                           </div>
                           <div class="peer peer-greed">
                             <span>
-                              <span class="fw-500">John Doe</span>
+                              <span class="fw-500">Altaf Ahmad</span>
                               <span class="c-grey-600"
                                 >liked your <span class="text-dark">post</span>
                               </span>
@@ -486,7 +486,7 @@
                             <div>
                               <div class="peers jc-sb fxw-nw mB-5">
                                 <div class="peer">
-                                  <p class="fw-500 mB-0">John Doe</p>
+                                  <p class="fw-500 mB-0">Altaf Ahmad</p>
                                 </div>
                                 <div class="peer">
                                   <small class="fsz-xs">5 mins ago</small>
@@ -588,7 +588,7 @@
                     />
                   </div>
                   <div class="peer">
-                    <span class="fsz-sm c-grey-900">John Doe</span>
+                    <span class="fsz-sm c-grey-900">Altaf Ahmad</span>
                   </div>
                 </a>
                 <ul class="dropdown-menu fsz-sm bd shadow rounded-0">
@@ -846,6 +846,8 @@
                                   >Current Password</label
                                 >
                                 <i
+                                  style="cursor: pointer"
+                                  onclick="togglePasswordVisibility('currentpassword')"
                                   class="ti-eye position-absolute top-50 px-3 end-0"
                                 ></i>
                               </div>
@@ -860,6 +862,8 @@
                                 />
                                 <label for="newpassword">New Password</label>
                                 <i
+                                  style="cursor: pointer"
+                                  onclick="togglePasswordVisibility('newpassword')"
                                   class="ti-eye position-absolute top-50 px-3 end-0"
                                 ></i>
                               </div>
@@ -876,6 +880,8 @@
                                   >Comfirm New Password</label
                                 >
                                 <i
+                                  style="cursor: pointer"
+                                  onclick="togglePasswordVisibility('comfirmnewpassword')"
                                   class="ti-eye position-absolute top-50 px-3 end-0"
                                 ></i>
                               </div>
@@ -915,207 +921,6 @@
       </div>
     </div>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="formData"
-      tabindex="-1"
-      aria-labelledby="formDataLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header shadow bd">
-            <h5 class="modal-title text-dark" id="formDataLabel">
-              Create Truck Management
-            </h5>
-
-            <div
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              class="close-container"
-            >
-              <span class="cross-line top-left"></span
-              ><span class="cross-line top-right"></span
-              ><span class="cross-line bottom-left"></span
-              ><span class="cross-line bottom-right"></span>
-            </div>
-          </div>
-          <form id="needs-validation" novalidate>
-            <div class="modal-body">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label" for="validationCustom01"
-                    >First name</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom01"
-                    placeholder="First name"
-                    value="Mark"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="validationCustom02"
-                    >Last name</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom02"
-                    placeholder="Last name"
-                    value="Otto"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="validationCustom03"
-                    >City</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom03"
-                    placeholder="City"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please provide a valid city.
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label" for="validationCustom04"
-                    >State</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom04"
-                    placeholder="State"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please provide a valid state.
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label" for="validationCustom05">Zip</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom05"
-                    placeholder="Zip"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please provide a valid zip.
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label" for="validationCustom06"
-                    >State</label
-                  >
-                  <select required id="validationCustom06" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Please provide a valid state.
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label fw-500">Birthdate</label>
-                  <div class="timepicker-input input-icon mb-3">
-                    <div class="input-group">
-                      <div class="input-group-text bgc-white bd bdwR-0">
-                        <i class="ti-calendar"></i>
-                      </div>
-                      <input
-                        type="text"
-                        class="form-control bdc-grey-200 start-date"
-                        placeholder="Datepicker"
-                        data-provide="datepicker"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="row">
-                    <div class="col-sm-2">Checkbox</div>
-                    <div class="col-sm-10">
-                      <div class="form-check">
-                        <label class="form-label form-check-label">
-                          <input class="form-check-input" type="checkbox" />
-                          Check
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-check">
-                    <label class="form-label form-check-label">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="gridRadios"
-                        id="gridRadios3"
-                        value="option3"
-                      />
-                      Option
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="shadow border-0 pt-0 modal-footer">
-              <button
-                type="button"
-                class="btn px-4 fw-bolder text-uppercase font-monospace btn-danger btn-color"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                type="submit"
-                class="btn px-4 fw-bolder text-uppercase font-monospace btn-success btn-color"
-              >
-                Create
-              </button>
-            </div>
-            <script>
-              // Example starter JavaScript for disabling form submissions if there are invalid fields
-              (function () {
-                "use strict";
-
-                window.addEventListener(
-                  "load",
-                  function () {
-                    var form = document.getElementById("needs-validation");
-                    form.addEventListener(
-                      "submit",
-                      function (event) {
-                        if (form.checkValidity() === false) {
-                          event.preventDefault();
-                          event.stopPropagation();
-                        }
-                        form.classList.add("was-validated");
-                      },
-                      false
-                    );
-                  },
-                  false
-                );
-              })();
-            </script>
-          </form>
-        </div>
-      </div>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
@@ -1123,6 +928,15 @@
     <script>
       var currentYear = new Date().getFullYear();
       document.getElementById("year").textContent = currentYear;
+
+      function togglePasswordVisibility(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+        } else {
+          passwordInput.type = "password";
+        }
+      }
     </script>
   </body>
 </html>

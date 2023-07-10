@@ -378,7 +378,7 @@
                           </div>
                           <div class="peer peer-greed">
                             <span>
-                              <span class="fw-500">John Doe</span>
+                              <span class="fw-500">Altaf Ahmad</span>
                               <span class="c-grey-600"
                                 >liked your <span class="text-dark">post</span>
                               </span>
@@ -486,7 +486,7 @@
                             <div>
                               <div class="peers jc-sb fxw-nw mB-5">
                                 <div class="peer">
-                                  <p class="fw-500 mB-0">John Doe</p>
+                                  <p class="fw-500 mB-0">Altaf Ahmad</p>
                                 </div>
                                 <div class="peer">
                                   <small class="fsz-xs">5 mins ago</small>
@@ -588,7 +588,7 @@
                     />
                   </div>
                   <div class="peer">
-                    <span class="fsz-sm c-grey-900">John Doe</span>
+                    <span class="fsz-sm c-grey-900">Altaf Ahmad</span>
                   </div>
                 </a>
                 <ul class="dropdown-menu fsz-sm bd shadow rounded-0">
@@ -684,6 +684,8 @@
                             >
                               <button
                                 type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#ViewData"
                                 class="border-0 px-2 c-teal-500"
                               >
                                 <i class="ti-eye"></i>
@@ -696,6 +698,8 @@
                               </button>
                               <button
                                 type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#Comfirmation"
                                 class="border-0 px-2 c-deep-orange-500"
                               >
                                 <i class="ti-trash"></i>
@@ -745,7 +749,7 @@
             <div
               data-bs-dismiss="modal"
               aria-label="Close"
-              class="close-container"
+              class="close-animate"
             >
               <span class="cross-line top-left"></span
               ><span class="cross-line top-right"></span
@@ -923,6 +927,192 @@
                 );
               })();
             </script>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--Confirmation Modal -->
+    <div
+      class="modal fade"
+      id="Comfirmation"
+      tabindex="-1"
+      aria-labelledby="ComfirmationLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <form id="needs-validation" novalidate>
+            <div class="modal-body d-grid gap-3 text-center">
+              <div>
+                <div
+                  class="border-4 rounded-circle d-inline-flex p-20 fs-1 border border-danger text-danger"
+                >
+                  <i class="ti-trash fs-xs"></i>
+                </div>
+              </div>
+              <h4 class="fw-bolder my-0">Are you sure?</h4>
+              <p class="mb-0">
+                Do you really want to delete these records? This process cannot
+                be undone.
+              </p>
+            </div>
+
+            <div
+              class="shadow border-0 mt-0 flex-nowrap justify-content-center modal-footer"
+            >
+              <button
+                type="button"
+                class="btn rounded-0 w-100 btn-outline-danger fw-bolder text-uppercase font-monospace"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                class="btn rounded-0 w-100 fw-bolder text-uppercase font-monospace btn-success btn-color"
+              >
+                Delete
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- View Details Modal -->
+    <div
+      class="modal fade"
+      id="ViewData"
+      tabindex="-1"
+      aria-labelledby="ViewDataLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered"
+      >
+        <div class="modal-content">
+          <form>
+            <div class="modal-header shadow bd">
+              <h5 class="modal-title text-dark" id="ViewDataLabel">
+                <i class="ti-eye c-teal-500"></i> Truck Management Details
+              </h5>
+
+              <div
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                class="close-animate"
+              >
+                <span class="cross-line top-left"></span
+                ><span class="cross-line top-right"></span
+                ><span class="cross-line bottom-left"></span
+                ><span class="cross-line bottom-right"></span>
+              </div>
+            </div>
+            <div class="modal-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div
+                    class="p-20 rounded h-100"
+                    style="
+                      backdrop-filter: blur(5px);
+                      box-shadow: 0 0rem 3rem -6px rgba(0, 0, 0, 0.175);
+                    "
+                  >
+                    <h6 class="c-blue-500 fw-bolder text-uppercase">Details</h6>
+                    <div class="my-2">
+                      <table class="table-sm table">
+                        <tbody>
+                          <tr>
+                            <th>Name :</th>
+                            <td class="text-start">Altaf Ahmad</td>
+                          </tr>
+                          <tr>
+                            <th>Email :</th>
+                            <td class="text-start">ahmad25@gmail.com</td>
+                          </tr>
+                          <tr>
+                            <th>Phone :</th>
+                            <td class="text-start">7618245875</td>
+                          </tr>
+                          <tr>
+                            <th>Address :</th>
+                            <td class="text-start">Noida, c-14, sector-6</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div
+                    class="p-20 rounded h-100"
+                    style="
+                      backdrop-filter: blur(5px);
+                      box-shadow: 0 0rem 3rem -6px rgba(0, 0, 0, 0.175);
+                    "
+                  >
+                    <h6 class="c-blue-500 fw-bolder text-uppercase">
+                      External Field
+                    </h6>
+                    <div class="my-2">
+                      <table class="table-sm table">
+                        <tbody>
+                          <tr>
+                            <th>Key :</th>
+                            <td class="text-start">Dummy on</td>
+                          </tr>
+                          <tr>
+                            <th>Created by :</th>
+                            <td class="text-start">Altaf Ahmad</td>
+                          </tr>
+                          <tr>
+                            <th>Address 2 :</th>
+                            <td class="text-start">Noida, c-14, sector-6</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div
+                    class="p-20 rounded h-100"
+                    style="
+                      backdrop-filter: blur(5px);
+                      box-shadow: 0 0rem 3rem -6px rgba(0, 0, 0, 0.175);
+                    "
+                  >
+                    <h6 class="c-blue-500 fw-bolder text-uppercase">
+                      External Field
+                    </h6>
+                    <div class="my-2">
+                      <table class="table-sm table">
+                        <tbody>
+                          <tr>
+                            <th>Status :</th>
+                            <td class="text-start c-teal-500">Active</td>
+                          </tr>
+                          <tr>
+                            <th class="text-truncate">Description :</th>
+                            <td class="text-start">
+                              Lorem Ipsum is simply dummy text of the printing
+                              and typesetting industry. Lorem Ipsum has been the
+                              industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of
+                              type and scrambled it to make a type specimen
+                              book. It has survived not only five centuries, but
+                              also the leap into electronic typesetting,
+                              remaining essentially unchanged.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </form>
         </div>
       </div>
