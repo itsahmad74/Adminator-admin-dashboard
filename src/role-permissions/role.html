@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Truck Management</title>
+    <title>Roles</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css"
@@ -65,6 +65,14 @@
           transform: scale(1);
           opacity: 0;
         }
+      }
+
+      .striped-bg {
+        padding: 10px !important;
+      }
+
+      .striped-bg:nth-child(2n-1) {
+        background-color: #f9f9f9;
       }
     </style>
   </head>
@@ -648,79 +656,513 @@
         <main class="main-content bgc-grey-100">
           <div id="mainContent">
             <div class="container-fluid">
-              <div
-                class="d-md-flex mT-10 mB-30 justify-content-between align-items-center"
-              >
-                <h4 class="c-grey-900">Truck Management</h4>
-                <button
-                  data-bs-toggle="modal"
-                  data-bs-target="#formData"
-                  class="btn btn-primary btn-color"
-                >
-                  <i class="ti-plus"></i> Add
-                </button>
+              <div class="mT-10 mB-30">
+                <h4 class="c-grey-900">Role Permissions</h4>
               </div>
               <div class="row">
                 <div class="col-md-12">
                   <div class="bgc-white shadow bd bdrs-3 p-20 mB-20">
-                    <table
-                      id="dataTable"
-                      class="table table-striped"
-                      cellspacing="0"
-                      width="100%"
+                    <!-- Add role form -->
+                    <form
+                      class="row g-3"
+                      onsubmit="return false"
+                      novalidate="novalidate"
                     >
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Tiger Nixon</td>
-                          <td>System Architect</td>
-                          <td>Edinburgh</td>
-                          <td>61</td>
-                          <td>2011/04/25</td>
-                          <td>$320,800</td>
-                          <td>
-                            <div
-                              class="btn-group"
-                              role="group"
-                              aria-label="Basic mixed styles example"
-                            >
-                              <button
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#ViewData"
-                                class="border-0 px-2 c-teal-500"
-                              >
-                                <i class="ti-eye"></i>
-                              </button>
-                              <button
-                                type="button"
-                                class="border-0 px-2 c-orange-500"
-                              >
-                                <i class="ti-pencil-alt"></i>
-                              </button>
-                              <button
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#Comfirmation"
-                                class="border-0 px-2 c-deep-orange-500"
-                              >
-                                <i class="ti-trash"></i>
-                              </button>
+                      <div class="col-12 mb-4">
+                        <label class="form-label" for="modalRoleName"
+                          >Role Name</label
+                        >
+                        <input
+                          type="text"
+                          id="modalRoleName"
+                          name="modalRoleName"
+                          class="w-auto form-control"
+                          placeholder="Enter a role name"
+                          tabindex="-1"
+                        />
+                      </div>
+                      <div class="col-12">
+                        <h4 class="mb-4">Permissions</h4>
+                        <!-- Permission table -->
+                        <div class="d-grid gap-4">
+                          <div
+                            class="d-flex striped-bg justify-content-between"
+                          >
+                            <div class="w-100">
+                              <div class="d-grid gap-3">
+                                <strong>Dashboard</strong>
+                              </div>
                             </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                            <div class="w-100">
+                              <div class="d-grid gap-3">
+                                <div class="d-flex">
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementRead"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementRead"
+                                    >
+                                      Read
+                                    </label>
+                                  </div>
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementWrite"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementWrite"
+                                    >
+                                      Write
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementCreate"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementCreate"
+                                    >
+                                      Create
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="d-flex striped-bg justify-content-between"
+                          >
+                            <div class="w-100">
+                              <div class="d-grid gap-3">
+                                <strong>Truck Management</strong>
+                                <p class="mb-0">Truck Assignment</p>
+                                <p class="mb-0">Truck Documents</p>
+                              </div>
+                            </div>
+                            <div class="w-100">
+                              <div class="d-grid gap-3">
+                                <div class="d-flex">
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementRead"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementRead"
+                                    >
+                                      Read
+                                    </label>
+                                  </div>
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementWrite"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementWrite"
+                                    >
+                                      Write
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementCreate"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementCreate"
+                                    >
+                                      Create
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementRead"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementRead"
+                                    >
+                                      Read
+                                    </label>
+                                  </div>
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementWrite"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementWrite"
+                                    >
+                                      Write
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementCreate"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementCreate"
+                                    >
+                                      Create
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementRead"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementRead"
+                                    >
+                                      Read
+                                    </label>
+                                  </div>
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementWrite"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementWrite"
+                                    >
+                                      Write
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementCreate"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementCreate"
+                                    >
+                                      Create
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="d-flex striped-bg justify-content-between"
+                          >
+                            <div class="w-100">
+                              <div class="d-grid gap-3">
+                                <strong>Truck Management</strong>
+                                <p class="mb-0">Truck Assignment</p>
+                                <p class="mb-0">Truck Documents</p>
+                              </div>
+                            </div>
+                            <div class="w-100">
+                              <div class="d-grid gap-3">
+                                <div class="d-flex">
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementRead"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementRead"
+                                    >
+                                      Read
+                                    </label>
+                                  </div>
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementWrite"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementWrite"
+                                    >
+                                      Write
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementCreate"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementCreate"
+                                    >
+                                      Create
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementRead"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementRead"
+                                    >
+                                      Read
+                                    </label>
+                                  </div>
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementWrite"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementWrite"
+                                    >
+                                      Write
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementCreate"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementCreate"
+                                    >
+                                      Create
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementRead"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementRead"
+                                    >
+                                      Read
+                                    </label>
+                                  </div>
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementWrite"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementWrite"
+                                    >
+                                      Write
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementCreate"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementCreate"
+                                    >
+                                      Create
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="d-flex striped-bg justify-content-between"
+                          >
+                            <div class="w-100">
+                              <div class="d-grid gap-3">
+                                <strong>Truck Management</strong>
+                                <p class="mb-0">Truck Assignment</p>
+                                <p class="mb-0">Truck Documents</p>
+                              </div>
+                            </div>
+                            <div class="w-100">
+                              <div class="d-grid gap-3">
+                                <div class="d-flex">
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementRead"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementRead"
+                                    >
+                                      Read
+                                    </label>
+                                  </div>
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementWrite"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementWrite"
+                                    >
+                                      Write
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementCreate"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementCreate"
+                                    >
+                                      Create
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementRead"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementRead"
+                                    >
+                                      Read
+                                    </label>
+                                  </div>
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementWrite"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementWrite"
+                                    >
+                                      Write
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementCreate"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementCreate"
+                                    >
+                                      Create
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="d-flex">
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementRead"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementRead"
+                                    >
+                                      Read
+                                    </label>
+                                  </div>
+                                  <div class="form-check me-3 me-lg-5">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementWrite"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementWrite"
+                                    >
+                                      Write
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      class="form-check-input"
+                                      type="checkbox"
+                                      id="userManagementCreate"
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="userManagementCreate"
+                                    >
+                                      Create
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Permission table -->
+                      </div>
+                      <div class="col-12 text-center">
+                        <button type="button" class="btn btn-primary btn-color">
+                          SUBMIT
+                        </button>
+                      </div>
+                    </form>
+                    <!--/ Add role form -->
                   </div>
                 </div>
               </div>
@@ -1087,119 +1529,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div
-                    class="p-20 rounded h-100"
-                    style="
-                      backdrop-filter: blur(5px);
-                      box-shadow: 0 0rem 3rem -6px rgba(0, 0, 0, 0.175);
-                    "
-                  >
-                    <h6
-                      class="c-blue-500 justify-content-between d-flex fw-bolder text-uppercase"
-                    >
-                      Truck Documents
-                      <a
-                        href="/truck-system/truck-documents.html"
-                        class="border-0 px-2 c-orange-500"
-                      >
-                        <i class="ti-pencil-alt"></i>
-                      </a>
-                    </h6>
-                    <div class="my-2">
-                      <table class="table-sm table">
-                        <thead>
-                          <th>Type</th>
-                          <th>Upload File</th>
-                          <th class="text-center">Action</th>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="text-start">Driving license</td>
-                            <td class="text-start">
-                              <img
-                                width="50"
-                                height="50"
-                                style="object-fit: cover"
-                                src="https://play-lh.googleusercontent.com/wSDPh-X0Q4mHY7mZgecXFMgWr5qFvpeng4qD6zrwT9unaMq-PEjrQRGrbbDojC38Ng=w240-h480-rw"
-                                alt="Driving license"
-                              />
-                            </td>
-                            <td class="text-center">
-                              <div
-                                class="btn-group"
-                                role="group"
-                                aria-label="Basic mixed styles example"
-                              >
-                                <a
-                                  download="filename.png"
-                                  href="https://cdn-icons-png.flaticon.com/512/4726/4726038.png"
-                                  class="border-0 px-2 c-teal-500"
-                                >
-                                  <i class="ti-download"></i>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-start">PUC Certificate</td>
-                            <td class="text-start">
-                              <img
-                                width="50"
-                                height="50"
-                                style="object-fit: cover"
-                                src="https://www.team-bhp.com/forum/attachments/technical-stuff/1914717d1568366439-understanding-puc-pollution-under-control-certificate-readings-emission2.jpg"
-                                alt="Driving license"
-                              />
-                            </td>
-                            <td class="text-center">
-                              <div
-                                class="btn-group"
-                                role="group"
-                                aria-label="Basic mixed styles example"
-                              >
-                                <a
-                                  download="filename.png"
-                                  href="https://www.team-bhp.com/forum/attachments/technical-stuff/1914717d1568366439-understanding-puc-pollution-under-control-certificate-readings-emission2.jpg"
-                                  class="border-0 px-2 c-teal-500"
-                                >
-                                  <i class="ti-download"></i>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-start">RC Book</td>
-                            <td class="text-start">
-                              <img
-                                width="50"
-                                height="50"
-                                style="object-fit: cover"
-                                src="https://transport.and.nic.in/images/rc1.jpg"
-                                alt="Driving license"
-                              />
-                            </td>
-                            <td class="text-center">
-                              <div
-                                class="btn-group"
-                                role="group"
-                                aria-label="Basic mixed styles example"
-                              >
-                                <a
-                                  download="filename.png"
-                                  href="https://transport.and.nic.in/images/rc1.jpg"
-                                  class="border-0 px-2 c-teal-500"
-                                >
-                                  <i class="ti-download"></i>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
                 <div class="col-md-12">
                   <div
                     class="p-20 rounded h-100"
@@ -1242,10 +1571,7 @@
         </div>
       </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="../assets/js/index.js"></script>
     <script>
       var currentYear = new Date().getFullYear();

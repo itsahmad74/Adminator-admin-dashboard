@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Truck Management</title>
+    <title>Truck Documents</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css"
@@ -101,7 +101,7 @@
                     </div>
                     <div class="peer peer-greed">
                       <h5 class="lh-1 py-1 text-truncate mB-0 logo-text">
-                        Truck Management
+                        Truck Documents
                       </h5>
                     </div>
                   </div>
@@ -651,7 +651,7 @@
               <div
                 class="d-md-flex mT-10 mB-30 justify-content-between align-items-center"
               >
-                <h4 class="c-grey-900">Truck Management</h4>
+                <h4 class="c-grey-900">Truck Documents</h4>
                 <button
                   data-bs-toggle="modal"
                   data-bs-target="#formData"
@@ -664,63 +664,64 @@
                 <div class="col-md-12">
                   <div class="bgc-white shadow bd bdrs-3 p-20 mB-20">
                     <table
-                      id="dataTable"
+                      id="truck-documents"
                       class="table table-striped"
                       cellspacing="0"
                       width="100%"
                     >
                       <thead>
                         <tr>
-                          <th>Name</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
-                          <th>Action</th>
+                          <th>Document Type</th>
+                          <th>Document Upload</th>
+                          <th>Document Expiry Date</th>
+                          <!-- <th class="text-center">Add More</th> -->
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Tiger Nixon</td>
-                          <td>System Architect</td>
-                          <td>Edinburgh</td>
-                          <td>61</td>
-                          <td>2011/04/25</td>
-                          <td>$320,800</td>
                           <td>
-                            <div
-                              class="btn-group"
-                              role="group"
-                              aria-label="Basic mixed styles example"
-                            >
-                              <button
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#ViewData"
-                                class="border-0 px-2 c-teal-500"
-                              >
-                                <i class="ti-eye"></i>
-                              </button>
-                              <button
-                                type="button"
-                                class="border-0 px-2 c-orange-500"
-                              >
-                                <i class="ti-pencil-alt"></i>
-                              </button>
-                              <button
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#Comfirmation"
-                                class="border-0 px-2 c-deep-orange-500"
-                              >
-                                <i class="ti-trash"></i>
-                              </button>
+                            <select required class="form-control">
+                              <option selected>-- Please Select --</option>
+                              <option>Driving license</option>
+                              <option>Auto insurance documents</option>
+                              <option>Valid permits</option>
+                              <option>RC Book</option>
+                              <option>PUC Certificate</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="file" class="form-control" required />
+                          </td>
+                          <td>
+                            <div class="input-group">
+                              <div class="input-group-text">
+                                <i class="ti-calendar"></i>
+                              </div>
+                              <input
+                                type="text"
+                                class="form-control start-date"
+                                placeholder="Datepicker"
+                                data-provide="datepicker"
+                              />
                             </div>
+                          </td>
+                          <td class="text-center align-middle">
+                            <button
+                              onclick="addNewRow()"
+                              type="button"
+                              class="border-0 rounded danger-combo py-2 px-3"
+                            >
+                              <i class="ti-plus"></i> Add
+                            </button>
                           </td>
                         </tr>
                       </tbody>
                     </table>
+                    <div class="text-end">
+                      <button type="button" class="btn btn-primary btn-color">
+                        SAVE
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1087,119 +1088,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div
-                    class="p-20 rounded h-100"
-                    style="
-                      backdrop-filter: blur(5px);
-                      box-shadow: 0 0rem 3rem -6px rgba(0, 0, 0, 0.175);
-                    "
-                  >
-                    <h6
-                      class="c-blue-500 justify-content-between d-flex fw-bolder text-uppercase"
-                    >
-                      Truck Documents
-                      <a
-                        href="/truck-system/truck-documents.html"
-                        class="border-0 px-2 c-orange-500"
-                      >
-                        <i class="ti-pencil-alt"></i>
-                      </a>
-                    </h6>
-                    <div class="my-2">
-                      <table class="table-sm table">
-                        <thead>
-                          <th>Type</th>
-                          <th>Upload File</th>
-                          <th class="text-center">Action</th>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="text-start">Driving license</td>
-                            <td class="text-start">
-                              <img
-                                width="50"
-                                height="50"
-                                style="object-fit: cover"
-                                src="https://play-lh.googleusercontent.com/wSDPh-X0Q4mHY7mZgecXFMgWr5qFvpeng4qD6zrwT9unaMq-PEjrQRGrbbDojC38Ng=w240-h480-rw"
-                                alt="Driving license"
-                              />
-                            </td>
-                            <td class="text-center">
-                              <div
-                                class="btn-group"
-                                role="group"
-                                aria-label="Basic mixed styles example"
-                              >
-                                <a
-                                  download="filename.png"
-                                  href="https://cdn-icons-png.flaticon.com/512/4726/4726038.png"
-                                  class="border-0 px-2 c-teal-500"
-                                >
-                                  <i class="ti-download"></i>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-start">PUC Certificate</td>
-                            <td class="text-start">
-                              <img
-                                width="50"
-                                height="50"
-                                style="object-fit: cover"
-                                src="https://www.team-bhp.com/forum/attachments/technical-stuff/1914717d1568366439-understanding-puc-pollution-under-control-certificate-readings-emission2.jpg"
-                                alt="Driving license"
-                              />
-                            </td>
-                            <td class="text-center">
-                              <div
-                                class="btn-group"
-                                role="group"
-                                aria-label="Basic mixed styles example"
-                              >
-                                <a
-                                  download="filename.png"
-                                  href="https://www.team-bhp.com/forum/attachments/technical-stuff/1914717d1568366439-understanding-puc-pollution-under-control-certificate-readings-emission2.jpg"
-                                  class="border-0 px-2 c-teal-500"
-                                >
-                                  <i class="ti-download"></i>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-start">RC Book</td>
-                            <td class="text-start">
-                              <img
-                                width="50"
-                                height="50"
-                                style="object-fit: cover"
-                                src="https://transport.and.nic.in/images/rc1.jpg"
-                                alt="Driving license"
-                              />
-                            </td>
-                            <td class="text-center">
-                              <div
-                                class="btn-group"
-                                role="group"
-                                aria-label="Basic mixed styles example"
-                              >
-                                <a
-                                  download="filename.png"
-                                  href="https://transport.and.nic.in/images/rc1.jpg"
-                                  class="border-0 px-2 c-teal-500"
-                                >
-                                  <i class="ti-download"></i>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
                 <div class="col-md-12">
                   <div
                     class="p-20 rounded h-100"
@@ -1250,6 +1138,32 @@
     <script>
       var currentYear = new Date().getFullYear();
       document.getElementById("year").textContent = currentYear;
+    </script>
+    <script type="text/javascript">
+      function addNewRow() {
+        var table = document.getElementById("truck-documents");
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+
+        cell1.innerHTML =
+          '<select required class="form-control"> <option selected>-- Please Select --</option> <option>Driving license</option> <option>Auto insurance documents</option> <option>Valid permits</option> <option>RC Book</option> <option>PUC Certificate</option> </select>';
+        cell2.innerHTML = '<input type="file" class="form-control" required />';
+        cell3.innerHTML =
+          '<div class="input-group"> <div class="input-group-text"> <i class="ti-calendar"></i> </div> <input type="text" class="form-control start-date" placeholder="Datepicker" data-provide="datepicker" /> </div>';
+        cell4.innerHTML =
+          '<input class="border-0 rounded red-combo py-2 px-3" type="button" value="Delete" onclick="deleteRow(this)" />';
+      }
+
+      /* This method will delete a row */
+      function deleteRow(ele) {
+        var row = ele.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      }
     </script>
   </body>
 </html>

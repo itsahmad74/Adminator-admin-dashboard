@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Truck Management</title>
+    <title>Attendance</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css"
@@ -65,6 +65,14 @@
           transform: scale(1);
           opacity: 0;
         }
+      }
+
+      .striped-bg {
+        padding: 10px !important;
+      }
+
+      .striped-bg:nth-child(2n-1) {
+        background-color: #f9f9f9;
       }
     </style>
   </head>
@@ -648,79 +656,246 @@
         <main class="main-content bgc-grey-100">
           <div id="mainContent">
             <div class="container-fluid">
-              <div
-                class="d-md-flex mT-10 mB-30 justify-content-between align-items-center"
-              >
-                <h4 class="c-grey-900">Truck Management</h4>
-                <button
-                  data-bs-toggle="modal"
-                  data-bs-target="#formData"
-                  class="btn btn-primary btn-color"
-                >
-                  <i class="ti-plus"></i> Add
-                </button>
-              </div>
               <div class="row">
-                <div class="col-md-12">
-                  <div class="bgc-white shadow bd bdrs-3 p-20 mB-20">
-                    <table
-                      id="dataTable"
-                      class="table table-striped"
-                      cellspacing="0"
-                      width="100%"
-                    >
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Tiger Nixon</td>
-                          <td>System Architect</td>
-                          <td>Edinburgh</td>
-                          <td>61</td>
-                          <td>2011/04/25</td>
-                          <td>$320,800</td>
-                          <td>
-                            <div
-                              class="btn-group"
-                              role="group"
-                              aria-label="Basic mixed styles example"
-                            >
-                              <button
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#ViewData"
-                                class="border-0 px-2 c-teal-500"
+                <div class="col-md-4">
+                  <div class="bdrs-3 ov-h bgc-white bd">
+                    <div class="bgc-deep-purple-500 ta-c p-30">
+                      <h1 class="fw-300 mB-5 lh-1 c-white">
+                        01<span class="fsz-def">st</span>
+                      </h1>
+                      <h3 class="c-white">Monday</h3>
+                    </div>
+                    <div class="pos-r">
+                      <button
+                        type="button"
+                        class="mT-nv-50 pos-a r-10 t-2 btn cur-p bdrs-50p p-0 w-3r h-3r btn-warning"
+                      >
+                        <i class="ti-plus"></i>
+                      </button>
+                      <ul class="m-0 p-0 mT-20">
+                        <li class="bdB peers ai-c jc-sb fxw-nw">
+                          <a
+                            class="td-n p-20 peers fxw-nw me-20 peer-greed c-grey-900"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#calendar-edit"
+                          >
+                            <div class="peer mR-15">
+                              <i class="ti ti-time c-red-500"></i>
+                            </div>
+                            <div class="peer">
+                              <span class="fw-600">All Day Event</span>
+                              <div class="c-grey-600">
+                                <span class="c-grey-700">Nov 01 - </span>
+                                <i>Website Development</i>
+                              </div>
+                            </div>
+                          </a>
+                          <div class="peers mR-15">
+                            <div class="peer">
+                              <a
+                                href=""
+                                class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5"
                               >
-                                <i class="ti-eye"></i>
-                              </button>
-                              <button
-                                type="button"
-                                class="border-0 px-2 c-orange-500"
-                              >
-                                <i class="ti-pencil-alt"></i>
-                              </button>
-                              <button
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#Comfirmation"
-                                class="border-0 px-2 c-deep-orange-500"
+                                <i class="ti-pencil"></i>
+                              </a>
+                            </div>
+                            <div class="peer">
+                              <a
+                                href=""
+                                class="td-n c-red-500 cH-blue-500 fsz-md p-5"
                               >
                                 <i class="ti-trash"></i>
-                              </button>
+                              </a>
                             </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                          </div>
+                        </li>
+                        <li class="bdB peers ai-c jc-sb fxw-nw">
+                          <a
+                            class="td-n p-20 peers fxw-nw me-20 peer-greed c-grey-900"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#calendar-edit"
+                          >
+                            <div class="peer mR-15">
+                              <i class="ti ti-time c-blue-500"></i>
+                            </div>
+                            <div class="peer">
+                              <span class="fw-600">All Day Event</span>
+                              <div class="c-grey-600">
+                                <span class="c-grey-700">Nov 01 - </span>
+                                <i>Website Development</i>
+                              </div>
+                            </div>
+                          </a>
+                          <div class="peers mR-15">
+                            <div class="peer">
+                              <a
+                                href=""
+                                class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5"
+                              >
+                                <i class="ti-pencil"></i>
+                              </a>
+                            </div>
+                            <div class="peer">
+                              <a
+                                href=""
+                                class="td-n c-red-500 cH-blue-500 fsz-md p-5"
+                              >
+                                <i class="ti-trash"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="bdB peers ai-c jc-sb fxw-nw">
+                          <a
+                            class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#calendar-edit"
+                          >
+                            <div class="peer mR-15">
+                              <i class="ti ti-time c-indigo-500"></i>
+                            </div>
+                            <div class="peer">
+                              <span class="fw-600">All Day Event</span>
+                              <div class="c-grey-600">
+                                <span class="c-grey-700">Nov 01 - </span>
+                                <i>Website Development</i>
+                              </div>
+                            </div>
+                          </a>
+                          <div class="peers mR-15">
+                            <div class="peer">
+                              <a
+                                href=""
+                                class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5"
+                              >
+                                <i class="ti-pencil"></i>
+                              </a>
+                            </div>
+                            <div class="peer">
+                              <a
+                                href=""
+                                class="td-n c-red-500 cH-blue-500 fsz-md p-5"
+                              >
+                                <i class="ti-trash"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="bdB peers ai-c jc-sb fxw-nw">
+                          <a
+                            class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900"
+                            href="javascript:void(0);"
+                            data-bs-toggle="modal"
+                            data-bs-target="#calendar-edit"
+                          >
+                            <div class="peer mR-15">
+                              <i class="ti ti-time c-green-500"></i>
+                            </div>
+                            <div class="peer">
+                              <span class="fw-600">All Day Event</span>
+                              <div class="c-grey-600">
+                                <span class="c-grey-700">Nov 01 - </span>
+                                <i>Website Development</i>
+                              </div>
+                            </div>
+                          </a>
+                          <div class="peers mR-15">
+                            <div class="peer">
+                              <a
+                                href=""
+                                class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5"
+                              >
+                                <i class="ti-pencil"></i>
+                              </a>
+                            </div>
+                            <div class="peer">
+                              <a
+                                href=""
+                                class="td-n c-red-500 cH-blue-500 fsz-md p-5"
+                              >
+                                <i class="ti-trash"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div id="calendar"></div>
+                </div>
+              </div>
+              <div class="modal fade" id="calendar-edit">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="bd p-15">
+                      <h5 class="m-0">Add Event</h5>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <label class="form-label fw-500">Event title</label>
+                          <input class="form-control bdc-grey-200" />
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label class="fw-500 form-label">Start</label>
+                            <div class="timepicker-input input-icon mb-3">
+                              <div class="input-group">
+                                <div
+                                  class="input-group-text bgc-white bd bdwR-0"
+                                >
+                                  <i class="ti-calendar"></i>
+                                </div>
+                                <input
+                                  type="text"
+                                  class="form-control bdc-grey-200 start-date"
+                                  placeholder="Datepicker"
+                                  data-provide="datepicker"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <label class="fw-500 form-label">End</label>
+                            <div class="timepicker-input input-icon mb-3">
+                              <div class="input-group">
+                                <div
+                                  class="input-group-text bgc-white bd bdwR-0"
+                                >
+                                  <i class="ti-calendar"></i>
+                                </div>
+                                <input
+                                  type="text"
+                                  class="form-control bdc-grey-200 end-date"
+                                  placeholder="Datepicker"
+                                  data-provide="datepicker"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label class="fw-500 form-label">Event title</label>
+                          <textarea
+                            class="form-control bdc-grey-200"
+                            rows="5"
+                          ></textarea>
+                        </div>
+                        <div class="text-end">
+                          <button
+                            class="btn btn-primary cur-p btn-color"
+                            data-dismiss="modal"
+                          >
+                            Done
+                          </button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -740,255 +915,6 @@
             >. All rights reserved.</span
           >
         </footer>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="formData"
-      tabindex="-1"
-      aria-labelledby="formDataLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header shadow bd">
-            <h5 class="modal-title text-dark" id="formDataLabel">
-              Create Truck Management
-            </h5>
-
-            <div
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              class="close-animate"
-            >
-              <span class="cross-line top-left"></span
-              ><span class="cross-line top-right"></span
-              ><span class="cross-line bottom-left"></span
-              ><span class="cross-line bottom-right"></span>
-            </div>
-          </div>
-          <form id="needs-validation" novalidate>
-            <div class="modal-body">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label" for="validationCustom01"
-                    >First name</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom01"
-                    placeholder="First name"
-                    value="Mark"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="validationCustom02"
-                    >Last name</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom02"
-                    placeholder="Last name"
-                    value="Otto"
-                    required
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="validationCustom03"
-                    >City</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom03"
-                    placeholder="City"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please provide a valid city.
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label" for="validationCustom04"
-                    >State</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom04"
-                    placeholder="State"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please provide a valid state.
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label" for="validationCustom05">Zip</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="validationCustom05"
-                    placeholder="Zip"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Please provide a valid zip.
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label" for="validationCustom06"
-                    >State</label
-                  >
-                  <select required id="validationCustom06" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Please provide a valid state.
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label fw-500">Birthdate</label>
-                  <div class="timepicker-input input-icon mb-3">
-                    <div class="input-group">
-                      <div class="input-group-text bgc-white bd bdwR-0">
-                        <i class="ti-calendar"></i>
-                      </div>
-                      <input
-                        type="text"
-                        class="form-control bdc-grey-200 start-date"
-                        placeholder="Datepicker"
-                        data-provide="datepicker"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="row">
-                    <div class="col-sm-2">Checkbox</div>
-                    <div class="col-sm-10">
-                      <div class="form-check">
-                        <label class="form-label form-check-label">
-                          <input class="form-check-input" type="checkbox" />
-                          Check
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-check">
-                    <label class="form-label form-check-label">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="gridRadios"
-                        id="gridRadios3"
-                        value="option3"
-                      />
-                      Option
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="shadow border-0 pt-0 modal-footer">
-              <button
-                type="button"
-                class="btn px-4 fw-bolder text-uppercase font-monospace btn-danger btn-color"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                type="submit"
-                class="btn px-4 fw-bolder text-uppercase font-monospace btn-success btn-color"
-              >
-                Create
-              </button>
-            </div>
-            <script>
-              // Example starter JavaScript for disabling form submissions if there are invalid fields
-              (function () {
-                "use strict";
-
-                window.addEventListener(
-                  "load",
-                  function () {
-                    var form = document.getElementById("needs-validation");
-                    form.addEventListener(
-                      "submit",
-                      function (event) {
-                        if (form.checkValidity() === false) {
-                          event.preventDefault();
-                          event.stopPropagation();
-                        }
-                        form.classList.add("was-validated");
-                      },
-                      false
-                    );
-                  },
-                  false
-                );
-              })();
-            </script>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!--Confirmation Modal -->
-    <div
-      class="modal fade"
-      id="Comfirmation"
-      tabindex="-1"
-      aria-labelledby="ComfirmationLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-sm modal-dialog-centered">
-        <div class="modal-content">
-          <form id="needs-validation" novalidate>
-            <div class="modal-body d-grid gap-3 text-center">
-              <div>
-                <div
-                  class="border-4 rounded-circle d-inline-flex p-20 fs-1 border border-danger text-danger"
-                >
-                  <i class="ti-trash fs-xs"></i>
-                </div>
-              </div>
-              <h4 class="fw-bolder my-0">Are you sure?</h4>
-              <p class="mb-0">
-                Do you really want to delete these records? This process cannot
-                be undone.
-              </p>
-            </div>
-
-            <div
-              class="shadow border-0 mt-0 flex-nowrap justify-content-center modal-footer"
-            >
-              <button
-                type="button"
-                class="btn rounded-0 w-100 btn-outline-danger fw-bolder text-uppercase font-monospace"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                type="submit"
-                class="btn rounded-0 w-100 fw-bolder text-uppercase font-monospace btn-success btn-color"
-              >
-                Delete
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
 
@@ -1087,119 +1013,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div
-                    class="p-20 rounded h-100"
-                    style="
-                      backdrop-filter: blur(5px);
-                      box-shadow: 0 0rem 3rem -6px rgba(0, 0, 0, 0.175);
-                    "
-                  >
-                    <h6
-                      class="c-blue-500 justify-content-between d-flex fw-bolder text-uppercase"
-                    >
-                      Truck Documents
-                      <a
-                        href="/truck-system/truck-documents.html"
-                        class="border-0 px-2 c-orange-500"
-                      >
-                        <i class="ti-pencil-alt"></i>
-                      </a>
-                    </h6>
-                    <div class="my-2">
-                      <table class="table-sm table">
-                        <thead>
-                          <th>Type</th>
-                          <th>Upload File</th>
-                          <th class="text-center">Action</th>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="text-start">Driving license</td>
-                            <td class="text-start">
-                              <img
-                                width="50"
-                                height="50"
-                                style="object-fit: cover"
-                                src="https://play-lh.googleusercontent.com/wSDPh-X0Q4mHY7mZgecXFMgWr5qFvpeng4qD6zrwT9unaMq-PEjrQRGrbbDojC38Ng=w240-h480-rw"
-                                alt="Driving license"
-                              />
-                            </td>
-                            <td class="text-center">
-                              <div
-                                class="btn-group"
-                                role="group"
-                                aria-label="Basic mixed styles example"
-                              >
-                                <a
-                                  download="filename.png"
-                                  href="https://cdn-icons-png.flaticon.com/512/4726/4726038.png"
-                                  class="border-0 px-2 c-teal-500"
-                                >
-                                  <i class="ti-download"></i>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-start">PUC Certificate</td>
-                            <td class="text-start">
-                              <img
-                                width="50"
-                                height="50"
-                                style="object-fit: cover"
-                                src="https://www.team-bhp.com/forum/attachments/technical-stuff/1914717d1568366439-understanding-puc-pollution-under-control-certificate-readings-emission2.jpg"
-                                alt="Driving license"
-                              />
-                            </td>
-                            <td class="text-center">
-                              <div
-                                class="btn-group"
-                                role="group"
-                                aria-label="Basic mixed styles example"
-                              >
-                                <a
-                                  download="filename.png"
-                                  href="https://www.team-bhp.com/forum/attachments/technical-stuff/1914717d1568366439-understanding-puc-pollution-under-control-certificate-readings-emission2.jpg"
-                                  class="border-0 px-2 c-teal-500"
-                                >
-                                  <i class="ti-download"></i>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-start">RC Book</td>
-                            <td class="text-start">
-                              <img
-                                width="50"
-                                height="50"
-                                style="object-fit: cover"
-                                src="https://transport.and.nic.in/images/rc1.jpg"
-                                alt="Driving license"
-                              />
-                            </td>
-                            <td class="text-center">
-                              <div
-                                class="btn-group"
-                                role="group"
-                                aria-label="Basic mixed styles example"
-                              >
-                                <a
-                                  download="filename.png"
-                                  href="https://transport.and.nic.in/images/rc1.jpg"
-                                  class="border-0 px-2 c-teal-500"
-                                >
-                                  <i class="ti-download"></i>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
                 <div class="col-md-12">
                   <div
                     class="p-20 rounded h-100"
@@ -1242,10 +1055,7 @@
         </div>
       </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="../assets/js/index.js"></script>
     <script>
       var currentYear = new Date().getFullYear();
